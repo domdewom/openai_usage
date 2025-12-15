@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # xbar Plugin Metadata (compatible with xbar and SwiftBar)
 # <xbar.title>OpenAI API Usage & Costs</xbar.title>
