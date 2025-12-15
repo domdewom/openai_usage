@@ -1,11 +1,11 @@
 # OpenAI Usage & Costs Scripts
 
-Bash scripts to fetch and display your OpenAI API usage statistics and costs. Available as both a standalone terminal script and a SwiftBar menu bar plugin.
+Bash scripts to fetch and display your OpenAI API usage statistics and costs. Available as both a standalone terminal script and a menu bar plugin compatible with both **xbar** and **SwiftBar**.
 
 ## What's Included
 
 - **`openai_usage.sh`** - Standalone script for terminal use
-- **`openai.30m.sh`** - SwiftBar plugin for macOS menu bar (auto-refreshes every 30 minutes)
+- **`openai.30m.sh`** - Menu bar plugin for xbar/SwiftBar (auto-refreshes every 30 minutes)
 
 Both scripts provide:
 - **Usage Statistics:**
@@ -34,7 +34,11 @@ If you don't have `jq` installed:
 brew install jq
 ```
 
-### Installing SwiftBar (for menu bar plugin)
+### Installing Menu Bar App (xbar or SwiftBar)
+
+The plugin works with both **xbar** and **SwiftBar** (SwiftBar is a fork/evolution of xbar with additional features).
+
+#### Option A: SwiftBar (Recommended)
 
 1. Download SwiftBar from the [releases page](https://github.com/swiftbar/SwiftBar/releases)
 2. Move SwiftBar.app to your Applications folder
@@ -43,6 +47,12 @@ brew install jq
    - Go to **System Settings → Privacy & Security → Accessibility**
    - Enable SwiftBar in the list
    - Restart SwiftBar after granting permission
+
+#### Option B: xbar
+
+1. Download xbar from [xbarapp.com](https://xbarapp.com)
+2. Install and launch xbar
+3. The plugin will work with xbar's standard plugin format
 
 ## Setup
 
@@ -161,10 +171,13 @@ Costs:
   Total: $7.41
 ```
 
-### SwiftBar Plugin (`openai.30m.sh`)
+### Menu Bar Plugin (`openai.30m.sh`)
+
+The plugin is compatible with both **xbar** and **SwiftBar**. It includes metadata for both platforms.
 
 #### Installation
 
+**For SwiftBar:**
 1. **Find SwiftBar's Plugin Directory:**
    - Open SwiftBar
    - Go to Preferences → General
@@ -185,6 +198,25 @@ Costs:
 3. **Refresh SwiftBar:**
    - SwiftBar should automatically detect the new plugin
    - If not, click the SwiftBar icon in your menu bar and select "Refresh All"
+
+**For xbar:**
+1. **Find xbar's Plugin Directory:**
+   - Open xbar
+   - Go to Preferences → Plugins
+   - Note the plugin directory path (usually `~/Library/Application Support/xbar/plugins/`)
+
+2. **Copy the Plugin:**
+   ```bash
+   # Copy the plugin file
+   cp openai.30m.sh ~/Library/Application\ Support/xbar/plugins/
+   
+   # Make sure it's executable
+   chmod +x ~/Library/Application\ Support/xbar/plugins/openai.30m.sh
+   ```
+
+3. **Refresh xbar:**
+   - xbar should automatically detect the new plugin
+   - If not, click the xbar icon and select "Refresh All"
 
 #### Usage
 
@@ -282,8 +314,9 @@ This repository also includes Claude usage scripts (`claude_usage.sh` and `claud
 4. Some users may need to add it to `~/.zprofile` instead
 5. As a last resort, restart your Mac
 
-### SwiftBar Plugin Not Appearing in Menu Bar
+### Plugin Not Appearing in Menu Bar
 
+**For SwiftBar:**
 1. **Check Plugin Directory:** Make sure the file is in SwiftBar's plugin directory
 2. **Check Permissions:** Ensure the file is executable: `chmod +x openai.30m.sh`
 3. **Check SwiftBar Logs:** 
@@ -293,6 +326,14 @@ This repository also includes Claude usage scripts (`claude_usage.sh` and `claud
    - Go to **System Settings → Privacy & Security → Accessibility**
    - Enable SwiftBar in the list
    - Restart SwiftBar
+
+**For xbar:**
+1. **Check Plugin Directory:** Make sure the file is in xbar's plugin directory
+2. **Check Permissions:** Ensure the file is executable: `chmod +x openai.30m.sh`
+3. **Check xbar Logs:** 
+   - Open xbar Preferences
+   - Check for error messages
+4. **Verify Plugin Format:** The plugin uses standard xbar format and should work out of the box
 
 ### Showing "⚠️ OpenAI" or Error Messages
 
@@ -345,8 +386,14 @@ This script uses the OpenAI Usage API:
 - [Usage API Documentation](https://platform.openai.com/docs/api-reference/usage)
 - [Usage API Cookbook Example](https://cookbook.openai.com/examples/completions_usage_api)
 
-## SwiftBar Resources
+## Menu Bar App Resources
 
+### SwiftBar
 - [SwiftBar GitHub](https://github.com/swiftbar/SwiftBar)
 - [SwiftBar Plugin Documentation](https://github.com/swiftbar/SwiftBar#plugins)
 - [SwiftBar Plugin Examples](https://github.com/swiftbar/SwiftBar#examples)
+
+### xbar
+- [xbar Website](https://xbarapp.com)
+- [xbar GitHub](https://github.com/matryer/xbar)
+- [xbar Plugin Documentation](https://github.com/matryer/xbar-plugins/blob/main/CONTRIBUTING.md)

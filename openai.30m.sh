@@ -1,7 +1,17 @@
 #!/bin/bash
 
+# xbar Plugin Metadata (compatible with xbar and SwiftBar)
+# <xbar.title>OpenAI API Usage & Costs</xbar.title>
+# <xbar.version>v1.0</xbar.version>
+# <xbar.author>domdewom</xbar.author>
+# <xbar.author.github>domdewom</xbar.author.github>
+# <xbar.desc>Monitor OpenAI API usage and costs in your menu bar</xbar.desc>
+# <xbar.image>https://raw.githubusercontent.com/domdewom/openai_usage/main/oh_usage.png</xbar.image>
+# <xbar.dependencies>curl,jq</xbar.dependencies>
+# <xbar.abouturl>https://platform.openai.com/usage</xbar.abouturl>
+
 # SwiftBar Plugin Metadata
-# <swiftbar.title>OpenAI Usage & Costs</swiftbar.title>
+# <swiftbar.title>OpenAI API Usage & Costs</swiftbar.title>
 # <swiftbar.version>1.0</swiftbar.version>
 # <swiftbar.author>domdewom</swiftbar.author>
 # <swiftbar.desc>Monitor OpenAI API usage and costs in your menu bar</swiftbar.desc>
